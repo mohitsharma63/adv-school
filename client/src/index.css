@@ -326,3 +326,17 @@
     inset: -1px;
   }
 }
+
+@layer components {
+  .container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .hover-elevate {
+    transition: all 0.2s ease-in-out;
+  }
+
+  .hover-elevate:hover {
+    transform: translateX(2px);
+  }
+}
