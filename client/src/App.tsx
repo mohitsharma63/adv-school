@@ -9,7 +9,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 // import Agents from "@/pages/agents";
 // import Agencies from "@/pages/agencies";
 // import Schools from "@/pages/schools";
-import Visitors from "./pages/visitors";
+// import Visitors from "./pages/Visitors";
 import StudentDetails from "@/pages/student-details";
 import StudentAdmission from "@/pages/student-admission";
 import CollectFees from "@/pages/collect-fees";
@@ -34,6 +34,10 @@ import OnlineCourseSetting from "@/pages/online-course-setting";
 import OfflinePayment from "@/pages/offline-payment";
 import NotFound from "./pages/not-found";
 import OnlineAdmission from "./pages/online-admission";
+import MultiBranchOverview from "@/pages/multi-branch-overview";
+import MultiBranchReport from "@/pages/multi-branch-report";
+import MultiBranchSetting from "@/pages/multi-branch-setting";
+
 
 function Router() {
   return (
@@ -45,7 +49,7 @@ function Router() {
       <Route path="/agencies" component={Agencies} />
       <Route path="/schools" component={Schools} /> */}
       <Route path="/online-admission" component={OnlineAdmission} />
-      <Route path="/visitors" component={Visitors} />
+      {/* <Route path="/visitors" component={Visitors} /> */}
       <Route path="/student-details" component={StudentDetails} />
       <Route path="/student-admission" component={StudentAdmission} />
       <Route path="/collect-fees" component={CollectFees} />
@@ -67,10 +71,12 @@ function Router() {
       <Route path="/course-category" component={CourseCategory} />
       <Route path="/question-bank" component={QuestionBank} />
       <Route path="/online-course-report" component={OnlineCourseReport} />
-       <Route path="/online-course-report" component={OnlineCourseReport} />
       <Route path="/online-course-setting" component={OnlineCourseSetting} />
-       <Route path="/offline-payment" component={OfflinePayment} />
-      <Route component={NotFound} />
+      <Route path="/multi-branch-overview" component={MultiBranchOverview} />
+      <Route path="/multi-branch-report" component={MultiBranchReport} />
+      <Route path="/multi-branch-setting" component={MultiBranchSetting} />
+      <Route path="/offline-payment" component={OfflinePayment} />
+      <Route path="*" component={NotFound} />
     </Switch>
   );
 }

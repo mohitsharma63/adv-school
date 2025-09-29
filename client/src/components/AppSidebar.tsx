@@ -417,25 +417,32 @@ interface AppSidebarProps {
 }
 
 export default function AppSidebar({ onMenuItemClick }: AppSidebarProps) {
-  const [expandedSections, setExpandedSections] = useState<Set<string>>(
-    new Set(["Academics", "Front Office", "Student Information", "Fees Collection", "Online Course", "Multi Branch", "Gmeet Live Classes"])
-  );
+  const [expandedSection, setExpandedSection] = useState<string | null>("Student Information");
+  const [location, navigate] = useLocation();
 
   const toggleSection = (sectionTitle: string) => {
-    const newExpanded = new Set(expandedSections);
-    if (newExpanded.has(sectionTitle)) {
-      newExpanded.delete(sectionTitle);
+    if (expandedSection === sectionTitle) {
+      setExpandedSection(null); // Close if already open
     } else {
-      newExpanded.add(sectionTitle);
+      setExpandedSection(sectionTitle); // Open new section (closes others)
     }
-    setExpandedSections(newExpanded);
   };
 
-  const [location, navigate] = useLocation();
+  // Function to check if a menu item is active
+  const isMenuItemActive = (route: string) => {
+    return location === route;
+  };
+
+  // Function to check if a section contains the active route
+  const isSectionActive = (section: string) => {
+    const routes = navigationMap[section];
+    if (!routes) return false;
+    return Object.values(routes).some(route => location === route);
+  };
 
   const handleMenuItemClick = (section: string, item: string) => {
     console.log(`Clicked: ${section} > ${item}`);
-    
+
     // Navigation mapping for Front Office and other sections
     const navigationMap: { [key: string]: { [key: string]: string } } = {
       "Front Office": {
@@ -536,7 +543,7 @@ export default function AppSidebar({ onMenuItemClick }: AppSidebarProps) {
       // Fallback for items without specific routes
       console.log(`No route defined for ${section} > ${item}`);
     }
-    
+
     onMenuItemClick?.(section, item);
   };
 
@@ -544,12 +551,16 @@ export default function AppSidebar({ onMenuItemClick }: AppSidebarProps) {
     <Sidebar data-testid="sidebar-main" className="border-r">
       <SidebarContent className="overflow-y-auto">
         {menuSections.map((section) => {
-          const isExpanded = expandedSections.has(section.title);
+          const isExpanded = expandedSection === section.title;
+          const sectionHasActiveItem = isSectionActive(section.title);
+
           return (
             <SidebarGroup key={section.title} className="px-2 py-1">
               <SidebarMenuButton
                 onClick={() => toggleSection(section.title)}
-                className="text-sidebar-primary hover:bg-accent hover:text-accent-foreground w-full justify-start font-medium py-2"
+                className={`text-sidebar-primary hover:bg-accent hover:text-accent-foreground w-full justify-start font-medium py-2 ${
+                  sectionHasActiveItem ? 'bg-orange-100 text-orange-600 border-l-4 border-orange-500' : ''
+                }`}
                 data-testid={`button-section-${section.title.toLowerCase().replace(/\s+/g, '-')}`}
               >
                 <section.icon className="w-4 h-4" />
@@ -564,18 +575,25 @@ export default function AppSidebar({ onMenuItemClick }: AppSidebarProps) {
               {isExpanded && (
                 <SidebarGroupContent className="ml-4 mt-1">
                   <SidebarMenu className="space-y-1">
-                    {section.items.map((item) => (
-                      <SidebarMenuItem key={item.title}>
-                        <SidebarMenuButton
-                          onClick={() => handleMenuItemClick(section.title, item.title)}
-                          className="hover:bg-accent hover:text-accent-foreground w-full justify-start text-sm py-1.5 pl-2"
-                          data-testid={`button-menu-${item.title.toLowerCase().replace(/\s+/g, '-')}`}
-                        >
-                          <item.icon className="w-4 h-4" />
-                          <span className="text-sm">{item.title}</span>
-                        </SidebarMenuButton>
-                      </SidebarMenuItem>
-                    ))}
+                    {section.items.map((item) => {
+                      const route = navigationMap[section.title]?.[item.title];
+                      const isActive = route && isMenuItemActive(route);
+
+                      return (
+                        <SidebarMenuItem key={item.title}>
+                          <SidebarMenuButton
+                            onClick={() => handleMenuItemClick(section.title, item.title)}
+                            className={`hover:bg-accent hover:text-accent-foreground w-full justify-start text-sm py-1.5 pl-2 ${
+                              isActive ? 'bg-orange-500 text-white' : ''
+                            }`}
+                            data-testid={`button-menu-${item.title.toLowerCase().replace(/\s+/g, '-')}`}
+                          >
+                            <item.icon className="w-4 h-4" />
+                            <span className="text-sm">{item.title}</span>
+                          </SidebarMenuButton>
+                        </SidebarMenuItem>
+                      );
+                    })}
                   </SidebarMenu>
                 </SidebarGroupContent>
               )}
