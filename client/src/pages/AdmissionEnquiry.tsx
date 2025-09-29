@@ -339,7 +339,7 @@ export default function AdmissionEnquiry() {
                 <CardContent className="p-0">
                   <div className="overflow-x-auto">
                     <Table>
-                      <TableHeader className="bg-gray-50">
+                      <TableHeader className="">
                         <TableRow>
                           <TableHead className="font-semibold text-gray-700">Student Details</TableHead>
                           <TableHead className="font-semibold text-gray-700">Contact</TableHead>
@@ -353,7 +353,7 @@ export default function AdmissionEnquiry() {
                       </TableHeader>
                       <TableBody>
                         {filteredEnquiries.map((enquiry) => (
-                          <TableRow key={enquiry.id} className="hover:bg-gray-50 transition-colors duration-200">
+                          <TableRow key={enquiry.id} className=" transition-colors duration-200">
                             <TableCell>
                               <div>
                                 <div className="font-medium text-gray-900">{enquiry.studentName}</div>

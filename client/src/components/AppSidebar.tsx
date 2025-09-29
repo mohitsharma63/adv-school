@@ -80,19 +80,19 @@ interface MenuSection {
 }
 
 const menuSections: MenuSection[] = [
-  {
-    title: "Front Office",
-    icon: Building2,
-    items: [
-      { title: "Admission Enquiry", icon: UserPlus },
-      { title: "Visitor Book", icon: Book },
-      { title: "Phone Call Log", icon: Phone },
-      { title: "Postal Dispatch", icon: Mail },
-      { title: "Postal Receive", icon: MailOpen },
-      { title: "Complain", icon: MessageSquare },
-      { title: "Setup Front Office", icon: Settings },
-    ],
-  },
+  // {
+  //   title: "Front Office",
+  //   icon: Building2,
+  //   items: [
+  //     { title: "Admission Enquiry", icon: UserPlus },
+  //     { title: "Visitor Book", icon: Book },
+  //     { title: "Phone Call Log", icon: Phone },
+  //     { title: "Postal Dispatch", icon: Mail },
+  //     { title: "Postal Receive", icon: MailOpen },
+  //     { title: "Complain", icon: MessageSquare },
+  //     { title: "Setup Front Office", icon: Settings },
+  //   ],
+  // },
   {
     title: "Student Information",
     icon: Users,
@@ -100,12 +100,12 @@ const menuSections: MenuSection[] = [
       { title: "Student Details", icon: UserCheck },
       { title: "Student Admission", icon: UserPlus },
       { title: "Online Admission", icon: Users },
-      { title: "Disabled Students", icon: UserX },
-      { title: "Multi Class Student", icon: UsersIcon },
-      { title: "Bulk Delete", icon: Trash2 },
-      { title: "Student Categories", icon: Tags },
-      { title: "Student House", icon: Home },
-      { title: "Disable Reason", icon: AlertCircle },
+      // { title: "Disabled Students", icon: UserX },
+      // { title: "Multi Class Student", icon: UsersIcon },
+      // { title: "Bulk Delete", icon: Trash2 },
+      // { title: "Student Categories", icon: Tags },
+      // { title: "Student House", icon: Home },
+      // { title: "Disable Reason", icon: AlertCircle },
     ],
   },
   {
@@ -440,7 +440,7 @@ export default function AppSidebar({ onMenuItemClick }: AppSidebarProps) {
     const navigationMap: { [key: string]: { [key: string]: string } } = {
       "Front Office": {
         "Admission Enquiry": "/admission-enquiry",
-        "Visitor Book": "/visitor-book",
+        "Visitor": "/visitors",
         "Phone Call Log": "/phone-call-log",
         "Postal Dispatch": "/postal-dispatch",
         "Postal Receive": "/postal-receive",
@@ -451,12 +451,69 @@ export default function AppSidebar({ onMenuItemClick }: AppSidebarProps) {
         "Student Details": "/student-details",
         "Student Admission": "/student-admission",
         "Online Admission": "/online-admission",
-        "Disabled Students": "/disabled-students",
-        "Multi Class Student": "/multi-class-student",
-        "Bulk Delete": "/bulk-delete",
+        // "Disabled Students": "/disabled-students",
+        // "Multi Class Student": "/multi-class-student",
+        // "Bulk Delete": "/bulk-delete",
         "Student Categories": "/student-categories",
-        "Student House": "/student-house",
-        "Disable Reason": "/disable-reason"
+        // "Student House": "/student-house",
+        // "Disable Reason": "/disable-reason"
+      },
+      "Fees Collection": {
+        "Collect Fees": "/collect-fees",
+        "Offline Bank Payments": "/offline-bank-payments",
+        "Search Fees Payment": "/search-fees-payment",
+        "Search Due Fees": "/search-due-fees",
+        "Fees Master": "/fees-master",
+        "Quick Fees": "/quick-fees",
+        "Fees Group": "/fees-group",
+        "Fees Type": "/fees-type",
+        "Fees Discount": "/fees-discount",
+        "Fees Carry Forward": "/fees-carry-forward",
+        "Fees Reminder": "/fees-reminder"
+      },
+      "Online Course": {
+        "Online Course": "/online-course",
+        "Offline Payment": "/offline-payment",
+        "Course Category": "/course-category",
+        "Question Bank": "/question-bank",
+        "Online Course Report": "/online-course-report",
+        "Setting": "/online-course-setting"
+      },
+      "Multi Branch": {
+        "Overview": "/multi-branch-overview", 
+        "Report": "/multi-branch-report",
+        "Setting": "/multi-branch-setting"
+      },
+      "Gmeet Live Classes": {
+        "Live Classes": "/live-classes",
+        "Live Meeting": "/live-meeting",
+        "Live Classes Report": "/live-classes-report",
+        "Live Meeting Report": "/live-meeting-report",
+        "Setting": "/gmeet-live-classes-setting"
+      },
+      "Income": {
+        "Add Income": "/add-income",
+        "Search Income": "/search-income",
+        "Income Head": "/income-head"
+      },
+      "Expenses": {
+        "Add Expense": "/add-expense",
+        "Search Expense": "/search-expense",
+        "Expense Head": "/expense-head"
+      },
+      "CBSE Examination": {
+        "CBSE Examination": "/cbse-examination"
+      },
+      "Examinations": {
+        "Exam Group": "/exam-group",
+        "Exam Schedule": "/exam-schedule",
+        "Exam Result": "/exam-result",
+        "Design Admit Card": "/design-admit-card",
+        "Print Admit Card": "/print-admit-card",
+        "Design Marksheet": "/design-marksheet",
+        "Print Marksheet": "/print-marksheet",
+        "Marks Grade": "/marks-grade",
+        "Marks Division": "/marks-division"
       },
       "Academics": {
         "Annual Calendar": "/annual-calendar",
