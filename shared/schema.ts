@@ -16,3 +16,22 @@ export const insertUserSchema = createInsertSchema(users).pick({
 
 export type InsertUser = z.infer<typeof insertUserSchema>;
 export type User = typeof users.$inferSelect;
+
+export interface AdmissionEnquiry {
+  id: string;
+  studentName: string;
+  parentName: string;
+  phone: string;
+  email: string;
+  class: string;
+  source: string;
+  enquiryDate: string;
+  lastFollowUpDate?: string;
+  nextFollowUpDate?: string;
+  status: 'Active' | 'Converted' | 'Closed';
+  remarks?: string;
+  createdAt: string;
+  updatedAt: string;
+}
+
+export type InsertAdmissionEnquiry = Omit<AdmissionEnquiry, 'id' | 'createdAt' | 'updatedAt'>;

@@ -40,7 +40,16 @@ function Router() {
       <Route path="/human-resource" component={HumanResource} />
       <Route path="/communicate" component={Communicate} />
       <Route path="/library" component={Library} />
+      
+      {/* Front Office Routes */}
       <Route path="/admission-enquiry" component={AdmissionEnquiry} />
+      <Route path="/visitor-book" component={NotFound} />
+      <Route path="/phone-call-log" component={NotFound} />
+      <Route path="/postal-dispatch" component={NotFound} />
+      <Route path="/postal-receive" component={NotFound} />
+      <Route path="/complain" component={NotFound} />
+      <Route path="/setup-front-office" component={NotFound} />
+      
       <Route component={NotFound} />
     </Switch>
   );

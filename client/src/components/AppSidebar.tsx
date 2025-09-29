@@ -55,6 +55,7 @@ import {
   TrendingUp,
 } from "lucide-react";
 import { useState } from "react";
+import { useLocation } from "wouter";
 import {
   Sidebar,
   SidebarContent,
@@ -430,8 +431,55 @@ export default function AppSidebar({ onMenuItemClick }: AppSidebarProps) {
     setExpandedSections(newExpanded);
   };
 
+  const [location, navigate] = useLocation();
+
   const handleMenuItemClick = (section: string, item: string) => {
     console.log(`Clicked: ${section} > ${item}`);
+    
+    // Navigation mapping for Front Office and other sections
+    const navigationMap: { [key: string]: { [key: string]: string } } = {
+      "Front Office": {
+        "Admission Enquiry": "/admission-enquiry",
+        "Visitor Book": "/visitor-book",
+        "Phone Call Log": "/phone-call-log",
+        "Postal Dispatch": "/postal-dispatch",
+        "Postal Receive": "/postal-receive",
+        "Complain": "/complain",
+        "Setup Front Office": "/setup-front-office"
+      },
+      "Student Information": {
+        "Student Details": "/student-details",
+        "Student Admission": "/student-admission",
+        "Online Admission": "/online-admission",
+        "Disabled Students": "/disabled-students",
+        "Multi Class Student": "/multi-class-student",
+        "Bulk Delete": "/bulk-delete",
+        "Student Categories": "/student-categories",
+        "Student House": "/student-house",
+        "Disable Reason": "/disable-reason"
+      },
+      "Academics": {
+        "Annual Calendar": "/annual-calendar",
+        "Attendance": "/attendance",
+        "Behaviour Records": "/behaviour-records",
+        "CBSE Examination": "/cbse-examination",
+        "Examinations": "/examinations",
+        "Expenses": "/expenses",
+        "Income": "/income",
+        "Online Examinations": "/online-examinations",
+        "QR Code Attendance": "/qr-code-attendance"
+      }
+    };
+
+    // Check if there's a route for this menu item
+    const route = navigationMap[section]?.[item];
+    if (route) {
+      navigate(route);
+    } else {
+      // Fallback for items without specific routes
+      console.log(`No route defined for ${section} > ${item}`);
+    }
+    
     onMenuItemClick?.(section, item);
   };
 
