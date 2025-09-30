@@ -37,6 +37,26 @@ import OnlineAdmission from "./pages/online-admission";
 import MultiBranchOverview from "@/pages/multi-branch-overview";
 import MultiBranchReport from "@/pages/multi-branch-report";
 import MultiBranchSetting from "@/pages/multi-branch-setting";
+// Importing new pages
+import LiveClasses from "@/pages/live-classes";
+import LiveMeeting from "@/pages/live-meeting";
+import LiveClassesReport from "@/pages/live-classes-report";
+import LiveMeetingReport from "@/pages/live-meeting-report";
+import GmeetLiveClassesSetting from "@/pages/gmeet-live-classes-setting";
+import AddIncome from "@/pages/add-income";
+import SearchIncome from "@/pages/search-income";
+import IncomeHead from "@/pages/income-head";
+import AddExpense from "./pages/add-expense";
+import SearchExpense from "./pages/search-expense";
+import ExpenseHead from "./pages/expense-head";
+import ExamGroup from "./pages/ExamGroup";
+import ExamSchedule from "./pages/ExamSchedule";
+import ExamResult from "./pages/ExamResult";
+import PrintAdmitCard from "./pages/PrintAdmitCard";
+import DesignMarksheet from "./pages/DesignMarksheet";
+import PrintMarksheet from "./pages/PrintMarksheet";
+import MarksGrade from "./pages/MarksGrade";
+import MarksDivision from "./pages/MarksDivision";
 
 
 function Router() {
@@ -67,7 +87,7 @@ function Router() {
       <Route path="/signup" component={Signup} />
       <Route path="/contact" component={Contact} /> */}
 
-       <Route path="/online-course" component={OnlineCourse} />
+      <Route path="/online-course" component={OnlineCourse} />
       <Route path="/course-category" component={CourseCategory} />
       <Route path="/question-bank" component={QuestionBank} />
       <Route path="/online-course-report" component={OnlineCourseReport} />
@@ -75,7 +95,30 @@ function Router() {
       <Route path="/multi-branch-overview" component={MultiBranchOverview} />
       <Route path="/multi-branch-report" component={MultiBranchReport} />
       <Route path="/multi-branch-setting" component={MultiBranchSetting} />
+      <Route path="/live-classes" component={LiveClasses} />
+      <Route path="/live-meeting" component={LiveMeeting} />
+      <Route path="/live-classes-report" component={LiveClassesReport} />
+      <Route path="/live-meeting-report" component={LiveMeetingReport} />
+      <Route path="/gmeet-live-classes-setting" component={GmeetLiveClassesSetting} />
+      <Route path="/add-income" component={AddIncome} />
+      <Route path="/search-income" component={SearchIncome} />
+      <Route path="/income-head" component={IncomeHead} />
+      <Route path="/add-expense" component={AddExpense} />
+      <Route path="/search-expense" component={SearchExpense} />
+      <Route path="/expense-head" component={ExpenseHead} />
       <Route path="/offline-payment" component={OfflinePayment} />
+
+      <Route path="/exam-group" component={ExamGroup} />
+      <Route path="/exam-schedule" component={ExamSchedule} />
+      <Route path="/exam-result" component={ExamResult} />
+      {/* <Route path="/design-admit-card" component={DesignAdmitCard} /> */}
+      <Route path="/print-admit-card" component={PrintAdmitCard} />
+      <Route path="/design-marksheet" component={DesignMarksheet} />
+      <Route path="/print-marksheet" component={PrintMarksheet} />
+      <Route path="/marks-grade" component={MarksGrade} />
+      <Route path="/marks-division" component={MarksDivision} />
+      {/* <Route path="/generate-admit-card" component={GenerateAdmitCard} /> */}
+      {/* <Route path="/generate-marksheet" component={GenerateMarksheet} /> */}  
       <Route path="*" component={NotFound} />
     </Switch>
   );

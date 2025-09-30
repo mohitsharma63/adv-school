@@ -80,7 +80,7 @@ export default function MultiBranchOverview() {
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
-                <tr className="border-b bg-gray-50">
+                <tr className="border-b  ">
                   <th className="text-left p-3">Branch</th>
                   <th className="text-left p-3">Current Session</th>
                   <th className="text-left p-3">Total Students</th>
@@ -91,7 +91,7 @@ export default function MultiBranchOverview() {
               </thead>
               <tbody>
                 {feesData.map((row, index) => (
-                  <tr key={index} className={index % 2 === 0 ? "bg-white" : "bg-gray-50"}>
+                  <tr key={index} className={index % 2 === 0 ? " " : " "}>
                     <td className="p-3">{row.branch}</td>
                     <td className="p-3">{row.session}</td>
                     <td className="p-3">{row.totalStudents}</td>
@@ -115,7 +115,7 @@ export default function MultiBranchOverview() {
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
-                <tr className="border-b bg-gray-50">
+                <tr className="border-b  ">
                   <th className="text-left p-3">Branch</th>
                   <th className="text-left p-3">Current Session</th>
                   <th className="text-left p-3">Total Fees</th>
@@ -125,7 +125,7 @@ export default function MultiBranchOverview() {
               </thead>
               <tbody>
                 {transportFeesData.map((row, index) => (
-                  <tr key={index} className={index % 2 === 0 ? "bg-white" : "bg-gray-50"}>
+                  <tr key={index} className={index % 2 === 0 ? " " : " "}>
                     <td className="p-3">{row.branch}</td>
                     <td className="p-3">{row.session}</td>
                     <td className="p-3">{row.totalFees}</td>
@@ -148,7 +148,7 @@ export default function MultiBranchOverview() {
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
-                <tr className="border-b bg-gray-50">
+                <tr className="border-b  ">
                   <th className="text-left p-3">Branch</th>
                   <th className="text-left p-3">Current Session</th>
                   <th className="text-left p-3">Offline Admission</th>
@@ -157,7 +157,7 @@ export default function MultiBranchOverview() {
               </thead>
               <tbody>
                 {studentAdmissionData.map((row, index) => (
-                  <tr key={index} className={index % 2 === 0 ? "bg-white" : "bg-gray-50"}>
+                  <tr key={index} className={index % 2 === 0 ? " " : " "}>
                     <td className="p-3">{row.branch}</td>
                     <td className="p-3">{row.session}</td>
                     <td className="p-3">{row.offlineAdmission}</td>
@@ -179,7 +179,7 @@ export default function MultiBranchOverview() {
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
-                <tr className="border-b bg-gray-50">
+                <tr className="border-b  ">
                   <th className="text-left p-3">Branch</th>
                   <th className="text-left p-3">Total Books</th>
                   <th className="text-left p-3">Members</th>
@@ -188,7 +188,7 @@ export default function MultiBranchOverview() {
               </thead>
               <tbody>
                 {libraryData.map((row, index) => (
-                  <tr key={index} className={index % 2 === 0 ? "bg-white" : "bg-gray-50"}>
+                  <tr key={index} className={index % 2 === 0 ? " " : " "}>
                     <td className="p-3">{row.branch}</td>
                     <td className="p-3">{row.totalBooks}</td>
                     <td className="p-3">{row.members}</td>
@@ -210,14 +210,14 @@ export default function MultiBranchOverview() {
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
-                <tr className="border-b bg-gray-50">
+                <tr className="border-b  ">
                   <th className="text-left p-3">Branch</th>
                   <th className="text-left p-3">Alumni Students</th>
                 </tr>
               </thead>
               <tbody>
                 {alumniData.map((row, index) => (
-                  <tr key={index} className={index % 2 === 0 ? "bg-white" : "bg-gray-50"}>
+                  <tr key={index} className={index % 2 === 0 ? " " : " "}>
                     <td className="p-3">{row.branch}</td>
                     <td className="p-3">{row.alumniStudents}</td>
                   </tr>
@@ -237,7 +237,7 @@ export default function MultiBranchOverview() {
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
-                <tr className="border-b bg-gray-50">
+                <tr className="border-b  ">
                   <th className="text-left p-3">Branch</th>
                   <th className="text-left p-3">Total Staff</th>
                   <th className="text-left p-3">Payroll Generated</th>
@@ -249,7 +249,7 @@ export default function MultiBranchOverview() {
               </thead>
               <tbody>
                 {staffPayrollData.map((row, index) => (
-                  <tr key={index} className={index % 2 === 0 ? "bg-white" : "bg-gray-50"}>
+                  <tr key={index} className={index % 2 === 0 ? " " : " "}>
                     <td className="p-3">{row.branch}</td>
                     <td className="p-3">{row.totalStaff}</td>
                     <td className="p-3">{row.payrollGenerated}</td>
@@ -274,7 +274,7 @@ export default function MultiBranchOverview() {
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
-                <tr className="border-b bg-gray-50">
+                <tr className="border-b  ">
                   <th className="text-left p-3">Branch</th>
                   <th className="text-left p-3">Total Staff</th>
                   <th className="text-left p-3">Present</th>
@@ -283,7 +283,7 @@ export default function MultiBranchOverview() {
               </thead>
               <tbody>
                 {staffAttendanceData.map((row, index) => (
-                  <tr key={index} className={index % 2 === 0 ? "bg-white" : "bg-gray-50"}>
+                  <tr key={index} className={index % 2 === 0 ? " " : " "}>
                     <td className="p-3">{row.branch}</td>
                     <td className="p-3">{row.totalStaff}</td>
                     <td className="p-3">{row.present}</td>
@@ -305,14 +305,14 @@ export default function MultiBranchOverview() {
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
-                <tr className="border-b bg-gray-50">
+                <tr className="border-b  ">
                   <th className="text-left p-3">Branch</th>
                   <th className="text-left p-3">Total User Log</th>
                 </tr>
               </thead>
               <tbody>
                 {userLogData.map((row, index) => (
-                  <tr key={index} className={index % 2 === 0 ? "bg-white" : "bg-gray-50"}>
+                  <tr key={index} className={index % 2 === 0 ? " " : " "}>
                     <td className="p-3">{row.branch}</td>
                     <td className="p-3">{row.totalUserLog}</td>
                   </tr>

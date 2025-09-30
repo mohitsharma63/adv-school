@@ -440,11 +440,8 @@ export default function AppSidebar({ onMenuItemClick }: AppSidebarProps) {
     return Object.values(routes).some(route => location === route);
   };
 
-  const handleMenuItemClick = (section: string, item: string) => {
-    console.log(`Clicked: ${section} > ${item}`);
-
-    // Navigation mapping for Front Office and other sections
-    const navigationMap: { [key: string]: { [key: string]: string } } = {
+  // Navigation mapping for Front Office and other sections
+  const navigationMap: { [key: string]: { [key: string]: string } } = {
       "Front Office": {
         "Admission Enquiry": "/admission-enquiry",
         "Visitor": "/visitors",
@@ -534,6 +531,9 @@ export default function AppSidebar({ onMenuItemClick }: AppSidebarProps) {
         "QR Code Attendance": "/qr-code-attendance"
       }
     };
+
+  const handleMenuItemClick = (section: string, item: string) => {
+    console.log(`Clicked: ${section} > ${item}`);
 
     // Check if there's a route for this menu item
     const route = navigationMap[section]?.[item];

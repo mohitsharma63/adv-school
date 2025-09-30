@@ -167,7 +167,7 @@ export default function AdmissionEnquiry() {
 
               {/* Stats Cards */}
               <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-                <Card className="bg-white shadow-lg border-0 hover:shadow-xl transition-shadow duration-300">
+                <Card className="  shadow-lg border-0 hover:shadow-xl transition-shadow duration-300">
                   <CardContent className="p-6">
                     <div className="flex items-center justify-between">
                       <div>
@@ -181,7 +181,7 @@ export default function AdmissionEnquiry() {
                   </CardContent>
                 </Card>
 
-                <Card className="bg-white shadow-lg border-0 hover:shadow-xl transition-shadow duration-300">
+                <Card className="  shadow-lg border-0 hover:shadow-xl transition-shadow duration-300">
                   <CardContent className="p-6">
                     <div className="flex items-center justify-between">
                       <div>
@@ -195,7 +195,7 @@ export default function AdmissionEnquiry() {
                   </CardContent>
                 </Card>
 
-                <Card className="bg-white shadow-lg border-0 hover:shadow-xl transition-shadow duration-300">
+                <Card className="  shadow-lg border-0 hover:shadow-xl transition-shadow duration-300">
                   <CardContent className="p-6">
                     <div className="flex items-center justify-between">
                       <div>
@@ -209,7 +209,7 @@ export default function AdmissionEnquiry() {
                   </CardContent>
                 </Card>
 
-                <Card className="bg-white shadow-lg border-0 hover:shadow-xl transition-shadow duration-300">
+                <Card className="  shadow-lg border-0 hover:shadow-xl transition-shadow duration-300">
                   <CardContent className="p-6">
                     <div className="flex items-center justify-between">
                       <div>
@@ -225,7 +225,7 @@ export default function AdmissionEnquiry() {
               </div>
 
               {/* Search and Filter Section */}
-              <Card className="bg-white shadow-lg border-0">
+              <Card className="  shadow-lg border-0">
                 <CardHeader className="bg-gradient-to-r from-gray-50 to-gray-100 border-b">
                   <CardTitle className="text-xl text-gray-800 flex items-center">
                     <Search className="h-5 w-5 mr-2" />
@@ -330,7 +330,7 @@ export default function AdmissionEnquiry() {
               </Card>
 
               {/* Data Table */}
-              <Card className="bg-white shadow-lg border-0">
+              <Card className="  shadow-lg border-0">
                 <CardHeader className="bg-gradient-to-r from-gray-50 to-gray-100 border-b">
                   <CardTitle className="text-xl text-gray-800">
                     Enquiry Records ({filteredEnquiries.length})
@@ -465,7 +465,7 @@ export default function AdmissionEnquiry() {
                           defaultValue={editingEnquiry?.studentName || ""}
                           placeholder="Enter student name"
                           required
-                          className="bg-white border-2 border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 shadow-sm"
+                          className="  border-2 border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 shadow-sm"
                         />
                       </div>
                       <div className="space-y-2">
@@ -478,7 +478,7 @@ export default function AdmissionEnquiry() {
                           defaultValue={editingEnquiry?.parentName || ""}
                           placeholder="Enter parent name"
                           required
-                          className="bg-white border-2 border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 shadow-sm"
+                          className="  border-2 border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 shadow-sm"
                         />
                       </div>
                       <div className="space-y-2">
@@ -491,7 +491,7 @@ export default function AdmissionEnquiry() {
                           defaultValue={editingEnquiry?.phone || ""}
                           placeholder="Enter phone number"
                           required
-                          className="bg-white border-2 border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 shadow-sm"
+                          className="  border-2 border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 shadow-sm"
                         />
                       </div>
                       <div className="space-y-2">
@@ -502,13 +502,13 @@ export default function AdmissionEnquiry() {
                           type="email"
                           defaultValue={editingEnquiry?.email || ""}
                           placeholder="Enter email address"
-                          className="bg-white border-2 border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 shadow-sm"
+                          className="  border-2 border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 shadow-sm"
                         />
                       </div>
                       <div className="space-y-2">
                         <Label htmlFor="class" className="text-sm font-medium text-gray-700">Class</Label>
                         <Select name="class" defaultValue={editingEnquiry?.class || ""}>
-                          <SelectTrigger className="bg-white border-2 border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 shadow-sm">
+                          <SelectTrigger className="  border-2 border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 shadow-sm">
                             <SelectValue placeholder="Select Class" />
                           </SelectTrigger>
                           <SelectContent>
@@ -526,7 +526,7 @@ export default function AdmissionEnquiry() {
                       <div className="space-y-2">
                         <Label htmlFor="source" className="text-sm font-medium text-gray-700">Source</Label>
                         <Select name="source" defaultValue={editingEnquiry?.source || ""}>
-                          <SelectTrigger className="bg-white border-2 border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 shadow-sm">
+                          <SelectTrigger className="  border-2 border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 shadow-sm">
                             <SelectValue placeholder="Select Source" />
                           </SelectTrigger>
                           <SelectContent>
@@ -545,7 +545,7 @@ export default function AdmissionEnquiry() {
                           name="enquiryDate"
                           type="date"
                           defaultValue={editingEnquiry?.enquiryDate || new Date().toISOString().split('T')[0]}
-                          className="bg-white border-2 border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 shadow-sm"
+                          className="  border-2 border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 shadow-sm"
                         />
                       </div>
                       <div className="space-y-2">
@@ -555,13 +555,13 @@ export default function AdmissionEnquiry() {
                           name="nextFollowUpDate"
                           type="date"
                           defaultValue={editingEnquiry?.nextFollowUpDate || ""}
-                          className="bg-white border-2 border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 shadow-sm"
+                          className="  border-2 border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 shadow-sm"
                         />
                       </div>
                       <div className="space-y-2">
                         <Label htmlFor="status" className="text-sm font-medium text-gray-700">Status</Label>
                         <Select name="status" defaultValue={editingEnquiry?.status || "Active"}>
-                          <SelectTrigger className="bg-white border-2 border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 shadow-sm">
+                          <SelectTrigger className="  border-2 border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 shadow-sm">
                             <SelectValue />
                           </SelectTrigger>
                           <SelectContent>
@@ -579,7 +579,7 @@ export default function AdmissionEnquiry() {
                         name="remarks"
                         defaultValue={editingEnquiry?.remarks || ""}
                         placeholder="Add any additional notes or comments..."
-                        className="bg-white border-2 border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 shadow-sm"
+                        className="  border-2 border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 shadow-sm"
                       />
                     </div>
                     <div className="flex justify-end space-x-3 pt-4 border-t">

@@ -60,7 +60,7 @@ export default function MultiBranchSetting() {
           <div className="overflow-x-auto">
             <table className="w-full">
               <thead>
-                <tr className="border-b bg-gray-50">
+                <tr className="border-b  ">
                   <th className="text-left p-3 font-medium">Branch</th>
                   <th className="text-left p-3 font-medium">URL</th>
                   <th className="text-left p-3 font-medium">Action</th>
@@ -68,7 +68,7 @@ export default function MultiBranchSetting() {
               </thead>
               <tbody>
                 {branches.map((branch, index) => (
-                  <tr key={branch.id} className={index % 2 === 0 ? "bg-white" : "bg-gray-50"}>
+                  <tr key={branch.id} className={index % 2 === 0 ? " " : " "}>
                     <td className="p-3">{branch.name}</td>
                     <td className="p-3">
                       <a 
