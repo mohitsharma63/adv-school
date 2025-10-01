@@ -201,7 +201,9 @@ const menuSections: MenuSection[] = [
     title: "Attendance",
     icon: UserCheck,
     items: [
-      { title: "Attendance", icon: UserCheck },
+      { title: "Student Attendance", icon: UserCheck },
+      { title: "Approve Leave", icon: UserCheck },
+      { title: "Attendance By Date", icon: UserCheck }, 
     ],
   },
   {
@@ -223,16 +225,14 @@ const menuSections: MenuSection[] = [
     title: "Academics",
     icon: BookOpen,
     items: [
-      { title: "Academics", icon: BookOpen },
-      { title: "Annual Calendar", icon: Calendar },
-      { title: "Attendance", icon: UserCheck },
-      { title: "Behaviour Records", icon: FileText },
-      { title: "CBSE Examination", icon: BarChart3 },
-      { title: "Examinations", icon: FileText },
-      { title: "Expenses", icon: DollarSign },
-      { title: "Income", icon: DollarSign },
-      { title: "Online Examinations", icon: Play },
-      { title: "QR Code Attendance", icon: Settings },
+      { title: "Class Timetable", icon: CalendarDays },
+      { title: "Teachers Timetable", icon: CalendarDays },
+      { title: "Assign Class Teacher", icon: UserCheck },
+      { title: "Promote Students", icon: ArrowRight },
+      { title: "Subject Group", icon: Users2 },
+      { title: "Subjects", icon: Book },
+      { title: "Class", icon: Book },
+      { title: "Sections", icon: Tags }
     ],
   },
   {
@@ -519,16 +519,34 @@ export default function AppSidebar({ onMenuItemClick }: AppSidebarProps) {
         "Marks Grade": "/marks-grade",
         "Marks Division": "/marks-division"
       },
-      "Academics": {
-        "Annual Calendar": "/annual-calendar",
-        "Attendance": "/attendance",
-        "Behaviour Records": "/behaviour-records",
-        "CBSE Examination": "/cbse-examination",
-        "Examinations": "/examinations",
-        "Expenses": "/expenses",
-        "Income": "/income",
-        "Online Examinations": "/online-examinations",
+      "Attendance": {
+        "Student Attendance": "/student-attendance",
+        "Approve Leave": "/approve-leave",
+        "Attendance By Date": "/attendance-by-date"
+      },
+      "QR Code Attendance": {
         "QR Code Attendance": "/qr-code-attendance"
+      },
+      "Online Examinations": {
+        "Online Exam": "/online-exam",
+        "Question Bank": "/question-bank"
+      },
+      "Lesson Plan": {
+        "Copy Old Lessons": "/copy-old-lessons",
+        "Manage Lesson Plan": "/manage-lesson-plan",
+        "Manage Syllabus Status": "/manage-syllabus-status",
+        "Lesson": "/lesson",
+        "Topic": "/topic"
+      },
+      "Academics": {
+        "Class Timetable": "/class-timetable",
+        "Teachers Timetable": "/teachers-timetable",
+        "Assign Class Teacher": "/assign-class-teacher",
+        "Promote Students": "/promote-students",
+        "Subject Group": "/subject-group",
+        "Subjects": "/subjects",
+        "Class": "/class",
+        "Sections": "/sections"
       }
     };
 
